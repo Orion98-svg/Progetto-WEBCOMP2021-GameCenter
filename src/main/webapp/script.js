@@ -9,7 +9,7 @@ menu.addEventListener('click', function(){
 async function fetchGames(page){
     $.ajax({
         type:'GET',
-        url:"https://api.rawg.io/api/games?key=2d150e2f5c964e6992d048af8ef065f7&page="+page+"&page_size=10",
+        url:"https://api.rawg.io/api/games?key=2d150e2f5c964e6992d048af8ef065f7&page="+page+"&page_size=40",
         success:function (result){
             for(var i=0;i<result.results.length;i++)
             {
@@ -33,7 +33,10 @@ function creatGame(name,image) {
     Space.append(Img);
     Space.append(Name);
     var element = document.getElementById("games");
-    element.append(Space);
+    element.appendChild(Space);
+
 }
 
 fetchGames(1);
+
+
