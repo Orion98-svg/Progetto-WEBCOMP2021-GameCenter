@@ -3,7 +3,7 @@ const menulinks = document.querySelector('.nav_menu')
 const GameContainer= document.getElementById('games')
 var PageNumber=1
 var PageSize=40
-document.onload=fetchGames(PageNumber,PageSize),setTimeout(() => {createButton(); }, 400);
+document.onload=fetchGames(PageNumber,PageSize),setTimeout(() => {createButton(); }, 3000);
 menu.addEventListener('click', function(){
     menu.classList.toggle('is-active')
     menulinks.classList.toggle('active')
@@ -65,7 +65,7 @@ function changePageForward()
 {
     cleanGameContainer()
     PageNumber++
-    setTimeout(() => {createButton(); }, 400);
+    setTimeout(() => {createButton(); }, 3000);
     fetchGames(PageNumber,PageSize)
 
 
@@ -76,7 +76,7 @@ function changePageBackward()
     {
         cleanGameContainer()
         PageNumber--
-        setTimeout(() => {createButton(); }, 400);
+        setTimeout(() => {createButton(); }, 3000);
         fetchGames(PageNumber,PageSize)
 
     }
