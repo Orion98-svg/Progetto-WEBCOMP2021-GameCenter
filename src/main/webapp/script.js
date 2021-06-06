@@ -43,7 +43,7 @@ function  createButton()
     BackwardButton.classList.add("page_button")
     BackwardButton.textContent="<<"
     GameContainer.append(BackwardButton)
-    var CurrentPage=document.createElement("div")
+    var CurrentPage=document.createElement("button")
     CurrentPage.classList.add("page_button")
     CurrentPage.textContent=PageNumber.toString()
     GameContainer.append(CurrentPage)

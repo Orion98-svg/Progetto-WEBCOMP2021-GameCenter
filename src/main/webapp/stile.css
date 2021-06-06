@@ -263,10 +263,11 @@
   border-radius: 20px;
   background: #e9872b;
   color: #fff;
-  margin: auto;
+  margin: 4px;
   font-size: small;
   text-align: center;
   align-items: center;
-  display: block;
-  padding-top: 10px;
+  justify-content: space-evenly;
+  display: inline-block;
+  border: none;
 }
