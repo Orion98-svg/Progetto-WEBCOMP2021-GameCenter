@@ -5,6 +5,13 @@
   font-family: "Kumbh Sans", sans-serif;
 }
 
+body {
+  background-image: url(../webapp/images/background.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 /*------------NAV SECTION----------*/
 
 .navbar {
@@ -203,9 +210,6 @@
 .main {
   justify-content: center;
   align-items: center;
-  background-image: url(../webapp/images/background.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 }
 
 /*--------Image Section-----------*/
@@ -236,10 +240,9 @@
   background-color: black;
   width: 250px;
   height: 200px;
-  margin: 5px;
   display: inline-block;
   vertical-align: top;
-  margin: 0 5px 10px;
+  margin: 5px 15px 15px;
 }
 
 .GameImage {
@@ -270,4 +273,15 @@
   justify-content: space-evenly;
   display: inline-block;
   border: none;
+  margin-bottom: 5px;
 }
+
+/*#Page_btn {
+  position: absolute;
+  bottom: 0px;
+  margin-top: 35px;
+  height: 40px;
+  width: 100%;
+  background: #cccccc;
+  z-index: 999999;
+}*/

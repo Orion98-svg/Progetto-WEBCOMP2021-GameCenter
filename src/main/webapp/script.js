@@ -1,13 +1,17 @@
 const menu = document.querySelector('#menu_button')
 const menulinks = document.querySelector('.nav_menu')
-const GameContainer= document.getElementById('games')
-var PageNumber=1
-var PageSize=40
-document.onload=fetchGames(PageNumber,PageSize),setTimeout(() => {createButton(); }, 3000);
 menu.addEventListener('click', function(){
     menu.classList.toggle('is-active')
     menulinks.classList.toggle('active')
 })
+
+const Posizione = document.getElementById("Page_btn")
+var Button_Render = 0;
+const GameContainer= document.getElementById('games')
+var PageNumber=1
+var PageSize=40
+document.onload=fetchGames(PageNumber,PageSize)
+
 
 async function fetchGames(page,size){
     $.ajax({
@@ -18,8 +22,8 @@ async function fetchGames(page,size){
             {
                 creatGame(result.results[i].name,result.results[i].background_image);
             }
+            createButton();
         }
-
     });
 }
 
@@ -39,21 +43,23 @@ function creatGame(name,image) {
 }
 function  createButton()
 {
+    
     var BackwardButton=document.createElement('button')
     BackwardButton.classList.add("page_button")
     BackwardButton.textContent="<<"
-    GameContainer.append(BackwardButton)
+    Posizione.append(BackwardButton)
     var CurrentPage=document.createElement("button")
     CurrentPage.classList.add("page_button")
     CurrentPage.textContent=PageNumber.toString()
-    GameContainer.append(CurrentPage)
+    Posizione.append(CurrentPage)
     var FarwardButton=document.createElement('button')
     FarwardButton.classList.add("page_button")
     FarwardButton.setAttribute("id","bottone")
     FarwardButton.textContent=">>"
-    GameContainer.append(FarwardButton)
+    Posizione.append(FarwardButton)
     FarwardButton.addEventListener("click",changePageForward)
     BackwardButton.addEventListener("click",changePageBackward)
+    Button_Render = 0;
 }
 function cleanGameContainer()
 {
@@ -61,23 +67,29 @@ function cleanGameContainer()
         GameContainer.removeChild(GameContainer.firstChild);
     }
 }
+
+function cleanPosizione()
+{
+    while (Posizione.firstChild) {
+        Posizione.removeChild(Posizione.firstChild)
+    }
+}
+
+
 function changePageForward()
 {
     cleanGameContainer()
+    cleanPosizione()
     PageNumber++
-    setTimeout(() => {createButton(); }, 3000);
     fetchGames(PageNumber,PageSize)
-
-
 }
 function changePageBackward()
 {
     if(PageNumber!=1)
     {
         cleanGameContainer()
+        cleanPosizione()
         PageNumber--
-        setTimeout(() => {createButton(); }, 3000);
         fetchGames(PageNumber,PageSize)
-
     }
 }
