@@ -212,6 +212,12 @@ body {
   align-items: center;
 }
 
+/*------------Piattaforme----------*/
+#Platforms {
+  height: 50px;
+  background: #80d893;
+}
+
 /*--------Image Section-----------*/
 .img_container {
   background: #141411;
@@ -235,6 +241,10 @@ body {
   padding-top: 5px;
 }
 
+#games {
+  padding-top: 10px;
+}
+
 .GameSpace {
   border-radius: 8px;
   background-color: black;
@@ -243,6 +253,12 @@ body {
   display: inline-block;
   vertical-align: top;
   margin: 5px 15px 15px;
+}
+
+.GameSpace:hover {
+  transform: scale(1.1);
+  transition: all 0.4s ease-in-out;
+  transition-delay: 50ms;
 }
 
 .GameImage {
@@ -275,13 +291,3 @@ body {
   border: none;
   margin-bottom: 5px;
 }
-
-/*#Page_btn {
-  position: absolute;
-  bottom: 0px;
-  margin-top: 35px;
-  height: 40px;
-  width: 100%;
-  background: #cccccc;
-  z-index: 999999;
-}*/
