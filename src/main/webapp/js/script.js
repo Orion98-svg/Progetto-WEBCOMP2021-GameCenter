@@ -28,9 +28,12 @@ async function fetchGames(page,size){
 }
 
 function creatGame(name,image) {
+    var Reference= document.createElement("a")
+    Reference.setAttribute("href","GamePage.html")
     var Space = document.createElement('div');
     Space.classList.add("GameSpace");
     Space.className = "GameSpace"
+    Space.setAttribute("href","GamePage.html")
     var Img = document.createElement('div')
     Img.classList.add("GameImage")
     Img.style.backgroundImage = "url(" + image + ")"
@@ -39,7 +42,8 @@ function creatGame(name,image) {
     Name.textContent = name
     Space.append(Img);
     Space.append(Name);
-    GameContainer.append(Space);
+    Reference.append(Space)
+    GameContainer.append(Reference);
 }
 function  createButton()
 {
