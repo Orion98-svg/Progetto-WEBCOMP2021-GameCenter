@@ -211,7 +211,16 @@ body {
   justify-content: center;
   align-items: center;
 }
-
+.badge{
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  background-size: cover;
+  border-radius: 100%;
+  margin-left: 0px;
+  text-align: right;
+  text-decoration: none;
+}
 /*------------Piattaforme----------*/
 #Platforms {
   height: 50px;
