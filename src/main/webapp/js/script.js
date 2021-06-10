@@ -52,84 +52,102 @@ function createStoreBadge()
     steam.setAttribute("id","steam")
     PlatformContainer.append(steam)
     steam.setAttribute("style",  "background-image: url('../images/steam-logo-transparent.png')")
-    steam.addEventListener('click',function (){
-
-        Filtred=true
-        Store=1
-        cleanGameContainer()
-        cleanPosizione()
-        fetchGames(PageNumber,PageSize,Store)
+    steam.addEventListener('click',function () {
+        if (Store != 1) {
+            Filtred = true
+            Store = 1
+            cleanGameContainer()
+            cleanPosizione()
+            fetchGames(PageNumber, PageSize, Store)
+        }
     })
     var epic=document.createElement("button")
     epic.classList.add("badge")
     epic.setAttribute("id","epic")
     PlatformContainer.append(epic)
     epic.setAttribute("style",  "background-image: url('../images/epic.png')")
-    epic.addEventListener('click',function (){
-
-        Filtred=true
-        Store=11
-        cleanGameContainer()
-        cleanPosizione()
-        fetchGames(PageNumber,PageSize,Store)
+    epic.addEventListener('click',function () {
+        if (Store != 11) {
+            Filtred = true
+            Store = 11
+            cleanGameContainer()
+            cleanPosizione()
+            fetchGames(PageNumber, PageSize, Store)
+        }
     })
     var xbox=document.createElement("button")
     xbox.classList.add("badge")
     xbox.setAttribute("id","xbox")
     PlatformContainer.append(xbox)
     xbox.setAttribute("style",  "background-image: url('../images/xbox.png')")
-    xbox.addEventListener('click',function (){
-        Filtred=true
-        Store=7
-        cleanGameContainer()
-        cleanPosizione()
-        fetchGames(PageNumber,PageSize,Store)
+    xbox.addEventListener('click',function () {
+        if (Store != 7) {
+            Filtred = true
+            Store = 7
+            cleanGameContainer()
+            cleanPosizione()
+            fetchGames(PageNumber, PageSize, Store)
+        }
     })
     var gog=document.createElement("button")
     gog.classList.add("badge")
     gog.setAttribute("id","gog")
     PlatformContainer.append(gog)
     gog.setAttribute("style",  "background-image: url('../images/gog.png')")
-    gog.addEventListener('click',function (){
-        Filtred=true
-        Store=5
-        cleanGameContainer()
-        cleanPosizione()
-        fetchGames(PageNumber,PageSize,Store)
+    gog.addEventListener('click',function () {
+        if (Store != 5) {
+            Filtred = true
+            Store = 5
+            cleanGameContainer()
+            cleanPosizione()
+            fetchGames(PageNumber, PageSize, Store)
+        }
     })
     var playstation=document.createElement("button")
     playstation.classList.add("badge")
     playstation.setAttribute("id","playstation")
     PlatformContainer.append(playstation)
     playstation.setAttribute("style",  "background-image: url('../images/playstation.jpg')")
-    playstation.addEventListener('click',function (){
-        Filtred=true
-        Store=3
-        cleanGameContainer()
-        cleanPosizione()
-        fetchGames(PageNumber,PageSize,Store)
+    playstation.addEventListener('click',function () {
+        if (Store != 3) {
+            Filtred = true
+            Store = 3
+            cleanGameContainer()
+            cleanPosizione()
+            fetchGames(PageNumber, PageSize, Store)
+        }
     })
-    var nintendo=document.createElement("button")
-    nintendo.classList.add("badge")
-    nintendo.setAttribute("id","nintendo")
-    PlatformContainer.append(nintendo)
-    nintendo.setAttribute("style",  "background-image: url('../images/nintendo.png')")
-    nintendo.addEventListener('click',function (){
-        Filtred=true
-        Store=6
-        cleanGameContainer()
-        cleanPosizione()
-        fetchGames(PageNumber,PageSize,Store)
-    })
-
-
-   /* var microsoftstore
-
-    var playstore
-    var applestore
-    var ithci*/
-}
-
+        var nintendo = document.createElement("button")
+        nintendo.classList.add("badge")
+        nintendo.setAttribute("id", "nintendo")
+        PlatformContainer.append(nintendo)
+        nintendo.setAttribute("style", "background-image: url('../images/nintendo.png')")
+        nintendo.addEventListener('click', function () {
+            if (Store != 6) {
+                Filtred = true
+                Store = 6
+                cleanGameContainer()
+                cleanPosizione()
+                fetchGames(PageNumber, PageSize, Store)
+            }
+        })
+        var reset = document.createElement("button")
+        reset.textContent="Tutti i giochi"
+        reset.setAttribute("id", "reset")
+        PlatformContainer.append(reset)
+        reset.addEventListener('click', function () {
+           if(Store!=null){
+            Filtred = false
+            Store=null
+            cleanGameContainer()
+            cleanPosizione()
+            fetchGames(PageNumber, PageSize, Store)}
+        })
+        /* var microsoftstore
+         var playstore
+         var applestore
+         var ithci*/
+    }
 function creatGame(name,image) {
     var Reference= document.createElement("a")
     Reference.setAttribute("href","GamePage.html")
